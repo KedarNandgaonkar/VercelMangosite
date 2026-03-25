@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | MangoStore – Ratnagiri Alphonso Mango</title>
+<meta name="description" content="Contact MangoStore for orders, enquiries, or any questions about our Ratnagiri Alphonso mangoes. Call, WhatsApp or email us.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#ff7b00;--deep:#e65c00;--golden:#ffb347;--cream:#fffaf2;--light:#fff8ee;--text:#1a1208;--border:#f0e4d0;--green:#2e7d32;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* RIBBON */
+.ribbon{background:linear-gradient(90deg,var(--deep),var(--orange),var(--golden),var(--orange),var(--deep));background-size:300%;animation:ribbonMove 5s linear infinite;color:#fff;font-size:12px;letter-spacing:1.8px;text-align:center;padding:9px 16px;text-transform:uppercase;}
+@keyframes ribbonMove{0%{background-position:0%}100%{background-position:200%}}
+
+/* NAVBAR */
+.navbar{background:rgba(255,248,238,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,179,71,.2);padding:14px 0;position:sticky;top:0;z-index:200;transition:box-shadow .3s;}
+.navbar.scrolled{box-shadow:0 4px 24px rgba(255,100,0,.1);}
+.brand{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;background:linear-gradient(135deg,var(--orange),var(--golden));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:var(--text);padding:8px 14px;border-radius:8px;transition:color .2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:2px;background:var(--orange);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-links a:hover,.nav-links a.active{color:var(--orange);}
+.nav-cta{background:linear-gradient(135deg,var(--orange),var(--deep))!important;color:#fff!important;border-radius:30px!important;padding:9px 22px!important;}
+.nav-cta::after{display:none!important;}
+.hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text);}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--deep) 0%,var(--golden) 100%);color:#fff;padding:72px 0 52px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::before{content:'🥭';position:absolute;font-size:260px;opacity:.06;left:-30px;top:-50px;pointer-events:none;line-height:1;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);margin-bottom:10px;animation:fadeUp .7s ease both;}
+.page-hero p{opacity:.85;font-size:15px;animation:fadeUp .7s .15s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTION */
+.contact-section{padding:70px 0;}
+
+/* INFO CARDS */
+.info-card{background:#fff;border-radius:20px;padding:32px 24px;border:1px solid var(--border);text-align:center;height:100%;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;}
+.info-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(255,100,0,.12);}
+.info-icon{font-size:40px;margin-bottom:14px;display:block;}
+.info-card h5{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:8px;color:var(--deep);}
+.info-card p{font-size:14px;color:#666;line-height:1.7;}
+.info-card a{color:var(--orange);font-weight:500;}
+.info-card a:hover{text-decoration:underline;}
+
+/* FORM BOX */
+.form-box{background:#fff;border-radius:22px;padding:40px;border:1px solid var(--border);box-shadow:0 6px 32px rgba(0,0,0,.05);}
+.form-box h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:6px;}
+.form-box .subtitle{color:#888;font-size:14px;margin-bottom:28px;}
+.flabel{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;display:block;}
+.finput,.fselect,.ftextarea{width:100%;border:1.5px solid var(--border);border-radius:11px;padding:11px 15px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s;background:var(--cream);color:var(--text);}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,123,0,.1);background:#fff;}
+.ftextarea{resize:vertical;min-height:120px;}
+.btn-send{width:100%;padding:14px;background:linear-gradient(135deg,var(--deep),var(--orange));color:#fff;border:none;border-radius:30px;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .2s;}
+.btn-send:hover{opacity:.9;transform:scale(1.02);}
+
+/* SUCCESS */
+.form-success{display:none;text-align:center;padding:32px 0;}
+.form-success .sicon{font-size:60px;margin-bottom:16px;}
+.form-success h4{font-family:'Playfair Display',serif;font-size:26px;color:var(--deep);margin-bottom:10px;}
+.form-success p{color:#777;font-size:14px;margin-bottom:20px;}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#25D366;color:#fff;border-radius:30px;font-weight:700;font-size:14px;transition:transform .3s;}
+.wa-btn:hover{transform:scale(1.05);color:#fff;}
+
+/* WA BOX */
+.wa-box{background:linear-gradient(135deg,#1a1208,#3d1f00);border-radius:20px;padding:32px;text-align:center;color:white;height:100%;}
+.wa-box h5{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:8px;}
+.wa-box p{color:rgba(255,255,255,.6);font-size:13px;margin-bottom:20px;line-height:1.7;}
+.wa-box-btn{display:inline-block;padding:12px 28px;background:#25D366;color:#fff;border-radius:30px;font-weight:700;font-size:14px;transition:transform .3s,box-shadow .3s;}
+.wa-box-btn:hover{transform:scale(1.06);box-shadow:0 10px 28px rgba(37,211,102,.45);color:#fff;}
+
+/* FAQ */
+.faq-section{padding:60px 0;background:#fff;}
+.accordion-button{font-family:'DM Sans',sans-serif;font-weight:600;font-size:15px;color:var(--text);}
+.accordion-button:not(.collapsed){color:var(--orange);background:var(--light);}
+.accordion-button:focus{box-shadow:none;}
+.accordion-body{font-size:14px;color:#666;line-height:1.7;}
+
+/* FOOTER */
+footer{background:#111;color:rgba(255,255,255,.5);padding:36px 24px;text-align:center;font-size:13px;}
+footer strong{color:var(--golden);}
+.foot-links{display:flex;justify-content:center;gap:20px;margin-top:12px;flex-wrap:wrap;}
+.foot-links a{color:rgba(255,255,255,.35);font-size:12px;text-transform:uppercase;letter-spacing:.8px;transition:color .2s;}
+.foot-links a:hover{color:var(--golden);}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .35s cubic-bezier(.34,1.56,.64,1);text-decoration:none;}
+.wa-float:hover{transform:scale(1.18) rotate(-6deg);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:16px;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:300;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:block;}
+  .form-box{padding:24px 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">🥭 Cash on Delivery Available &nbsp;|&nbsp; Season 2026 — Fresh Stock &nbsp;|&nbsp; Free Delivery Above ₹2500 🥭</div>
+
+<nav class="navbar" id="navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="brand" href="index.html">🥭 MangoStore</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="order.html" class="nav-cta">Order Now →</a>
+    </div>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p>Questions, bulk orders, or just want to chat — we're here 🥭</p>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="container">
+
+    <!-- INFO CARDS -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4 reveal" style="transition-delay:.05s">
+        <div class="info-card">
+          <span class="info-icon">📞</span>
+          <h5>Call Us</h5>
+          <p>Mon – Sat, 9 AM to 7 PM<br><a href="tel:+919999999999">+91 99999 99999</a></p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.12s">
+        <div class="info-card">
+          <span class="info-icon">💬</span>
+          <h5>WhatsApp</h5>
+          <p>Fastest way to reach us<br><a href="https://wa.me/919999999999">Chat with us on WhatsApp</a></p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.19s">
+        <div class="info-card">
+          <span class="info-icon">📍</span>
+          <h5>Farm Location</h5>
+          <p>Survey No. 42, Ganpatipule Road<br>Ratnagiri, Maharashtra – 415612</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM + WA BOX -->
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-7 reveal">
+        <div class="form-box">
+          <h3>Send a Message</h3>
+          <p class="subtitle">We'll get back to you within a day.</p>
+
+          <div id="contactForm">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="flabel">Full Name *</label>
+                <input class="finput" type="text" id="cName" placeholder="Rahul Sharma">
+              </div>
+              <div class="col-sm-6">
+                <label class="flabel">Phone Number *</label>
+                <input class="finput" type="tel" id="cPhone" placeholder="+91 98765 43210">
+              </div>
+              <div class="col-12">
+                <label class="flabel">Subject</label>
+                <select class="fselect" id="cSubject">
+                  <option value="">Select a topic</option>
+                  <option>Place an Order</option>
+                  <option>Bulk / Corporate Order</option>
+                  <option>Track My Order</option>
+                  <option>Delivery Question</option>
+                  <option>Product Information</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="flabel">Message *</label>
+                <textarea class="ftextarea" id="cMsg" placeholder="How can we help you?"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn-send" onclick="sendMsg()">Send Message →</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="sicon">✅</div>
+            <h4>Message Received!</h4>
+            <p>Thank you for reaching out. We'll respond within 24 hours.<br>For urgent queries, WhatsApp us directly.</p>
+            <a href="https://wa.me/919999999999" class="wa-btn"><span style="font-size:18px;">💬</span> Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 reveal" style="transition-delay:.12s">
+        <div class="wa-box">
+          <div style="font-size:44px;margin-bottom:16px;">💬</div>
+          <h5>WhatsApp is Fastest</h5>
+          <p>Send us a message on WhatsApp for the quickest response. We're available Mon–Sat, 9 AM to 7 PM.</p>
+          <a href="https://wa.me/919999999999?text=Hi%20MangoStore!%20I%20want%20to%20enquire%20about%20your%20mangoes." class="wa-box-btn">Open WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container" style="max-width:740px;">
+    <h2 style="font-family:'Playfair Display',serif;text-align:center;font-size:clamp(26px,4vw,38px);margin-bottom:8px;background:linear-gradient(135deg,var(--deep),var(--golden));-webkit-background-clip:text;-webkit-text-fill-color:transparent;" class="reveal">Common Questions</h2>
+    <p style="text-align:center;color:#888;margin-bottom:40px;font-size:14px;" class="reveal">Quick answers to what people usually ask</p>
+
+    <div class="accordion" id="faqAcc" data-aos="fade-up">
+
+      <div class="accordion-item border-0 mb-3 overflow-hidden reveal" style="border:1px solid var(--border)!important;border-radius:14px!important;">
+        <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1" style="border-radius:14px;">When will my mangoes arrive after ordering?</button></h2>
+        <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+          <div class="accordion-body">We dispatch within 24 hours of order confirmation. Delivery typically takes 1–3 days depending on your location. We'll tell you the expected date when we call to confirm.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 mb-3 overflow-hidden reveal" style="border:1px solid var(--border)!important;border-radius:14px!important;transition-delay:.08s">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2" style="border-radius:14px;">Is payment really only cash on delivery?</button></h2>
+        <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">Yes, we only accept cash on delivery. You don't pay anything until the mangoes are in your hands. This keeps things simple and risk-free for you.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 mb-3 overflow-hidden reveal" style="border:1px solid var(--border)!important;border-radius:14px!important;transition-delay:.16s">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3" style="border-radius:14px;">What if my mangoes arrive damaged?</button></h2>
+        <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">Send us a photo on WhatsApp within 24 hours of delivery. We'll either replace them or give a full refund — no questions asked.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 mb-3 overflow-hidden reveal" style="border:1px solid var(--border)!important;border-radius:14px!important;transition-delay:.24s">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4" style="border-radius:14px;">Do you take bulk or corporate orders?</button></h2>
+        <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">Yes! We offer special pricing for orders of 50+ boxes. Great for corporate gifting, events, or large families. Contact us via WhatsApp or the form above for a quote.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>MangoStore</strong> &nbsp;|&nbsp; Ratnagiri Alphonso Mango &nbsp;|&nbsp; Made with 🥭 in Maharashtra</p>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+    <a href="admin.html">Admin</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/919999999999" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>50));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function sendMsg() {
+  const name = document.getElementById('cName').value.trim();
+  const phone = document.getElementById('cPhone').value.trim();
+  const msg = document.getElementById('cMsg').value.trim();
+  if (!name || !phone || !msg) { alert('Please fill your name, phone and message.'); return; }
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
